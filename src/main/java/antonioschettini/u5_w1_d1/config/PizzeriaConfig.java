@@ -1,9 +1,7 @@
 package antonioschettini.u5_w1_d1.config;
 
-import antonioschettini.u5_w1_d1.entities.Drink;
-import antonioschettini.u5_w1_d1.entities.Menu;
-import antonioschettini.u5_w1_d1.entities.Pizza;
-import antonioschettini.u5_w1_d1.entities.Topping;
+import antonioschettini.u5_w1_d1.entities.*;
+import antonioschettini.u5_w1_d1.enums.StatoTavolo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -68,6 +66,17 @@ public class PizzeriaConfig {
     @Bean
     public Drink wine() {
         return new Drink("Wine (0.50cl, 13%) ", 650, 11.00);
+    }
+
+    // Aggiungo due bean per i tavoli
+    @Bean
+    public Tavolo tavolo1() {
+        return new Tavolo(1, 4, StatoTavolo.LIBERO);
+    }
+
+    @Bean
+    public Tavolo tavolo2() {
+        return new Tavolo(2, 6, StatoTavolo.LIBERO);
     }
 
     // Adesso creo il menu completo per inserire la lista di pizze toppings drink, utilizzando i beean

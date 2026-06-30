@@ -1,14 +1,15 @@
 package antonioschettini.u5_w1_d1.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data // con il data mi crea automaticamente getter setter e tostring
-@AllArgsConstructor
 @NoArgsConstructor
-public class Drink {
-    private String nome;
-    private int calorie;
-    private double prezzo;
+@ToString(callSuper = true)
+public class Drink extends ElementoMenu {
+    
+    public Drink(String nome, int calorie, double prezzo) {
+        super(nome, prezzo, calorie);
+    }
 }
